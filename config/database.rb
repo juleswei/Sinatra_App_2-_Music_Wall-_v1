@@ -4,18 +4,27 @@ configure do
     ActiveRecord::Base.logger = Logger.new(STDOUT)
   end
 
+  if development?
+  set :database, {
+    adapter: "sqlite3",
+    database: "db/db.sqlite3"
+  }
+else
+  set :database, ENV['DATABASE_URL']
+end
 
-  if (ENV['DATABASE_URL'])
-    set :database, {
-      adapter: "postgresql",
-      url: ENV['DATABASE_URL']
-    }
-  else
-    set :database, {
-      adapter: "sqlite3",
-      database: "db/db.sqlite3"
-    }
-  end
+  # if (ENV['DATABASE_URL'])
+  #   set :database, {
+  #     adapter: "postgresql ",
+  #     url: ENV['DATABASE_URL']
+  #   }
+  # else
+  #   set :database, {
+  #     adapter: "sqlite3",
+  #     database: "db/db.sqlite3"
+  #   }
+  # end
+  
   # Load all models from app/models, using autoload instead of require
   # See http://www.rubyinside.com/ruby-techniques-revealed-autoload-1652.html
   Dir[APP_ROOT.join('app', 'models', '*.rb')].each do |model_file|
