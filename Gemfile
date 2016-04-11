@@ -20,4 +20,5 @@ end
 group :development, :test do
   gem 'shotgun'
   gem 'sqlite3'
+  gem 'pry'
 end
