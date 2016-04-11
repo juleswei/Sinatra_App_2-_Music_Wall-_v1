@@ -7,7 +7,7 @@ configure do
 
   if (ENV['DATABASE_URL'])
     set :database, {
-      # adapter: "pg",
+      adapter: "pg",
       url: ENV['DATABASE_URL']
     }
   else

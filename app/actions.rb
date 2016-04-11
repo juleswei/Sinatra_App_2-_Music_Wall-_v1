@@ -1,5 +1,3 @@
-# Homepage (Root path)
-require 'pry'
 require 'uri'
 require 'cgi'
 
