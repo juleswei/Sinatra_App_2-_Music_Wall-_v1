@@ -1,0 +1,43 @@
+<!-- <div class="container">
+  <div class="jumbotron">
+    <h1>Sign Up Page</h1>
+    <p>Input your user info today</p>
+
+      <form method = "post" action ="/users">
+        <div>
+          <label>Name</label>
+          <input type = "text" name = "name">
+        </div>
+        <div>
+          <label>Email</label>
+          <input type = "text" name = "email">
+        </div>
+        <div>
+          <label>Password</label>
+          <input type="text" name = "password">
+        </div>
+        <div>
+          <input type="submit" name="Create New User">
+        </div>
+      </form>
+  </div>
+</div> -->
+
+ <div class="sign_in_box">
+
+      <form class="form-signin" method = "post" action ="/users">
+        <h2 class="form-signin-heading">Please sign in</h2>
+
+        <label for="inputEmail" class="sr-only">Name</label>
+        <input type="text" name = "name" id="inputEmail" class="form-control" placeholder="Name" required>
+
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" name = "email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" name = "password" id="inputPassword" class="form-control" placeholder="Password" required>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+
+    </div>

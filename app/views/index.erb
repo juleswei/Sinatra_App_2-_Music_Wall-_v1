@@ -1,1 +1,75 @@
-<h1>Home Page</h1>
+
+
+  <div class="jumbotron" id = "front_page_jumbo">
+    <h1>Songzi</h1>
+    <p>Songzi is the most popular site for all your music needs on the web.</p> 
+        <p>
+      <a href="/users/new">Sign Up</a></p>
+  </div>
+
+
+<div class ="video_table">
+  <table class="container">
+    <tbody> 
+      <tr>
+        <td><div class="col-sm-8">
+           <iframe width="600" height="338" src="https://www.youtube.com/embed/lf_wVfwpfp8" frameborder="0" allowfullscreen></iframe>
+        </div></td>
+        <td><div class="col-sm-8">
+           <iframe width="600" height="338" src="https://www.youtube.com/embed/YQHsXMglC9A" frameborder="0" allowfullscreen></iframe>
+        </div></td>
+      </tr>
+
+      <tr>
+        <td><div class="col-sm-8">
+           <iframe width="600" height="338" src="https://www.youtube.com/embed/HL1UzIK-flA?list=PLx0sYbCqOb8TBPRdmBHs5Iftvv9TPboYG" frameborder="0" allowfullscreen></iframe>
+        </div></td>
+        <td><div class="col-sm-8">
+           <iframe width="600" height="338" src="https://www.youtube.com/embed/CAME8GDRTfI" frameborder="0" allowfullscreen></iframe>
+        </div></td>      
+      </tr>  
+
+    </tbody>
+  </table>
+</div>
+
+<div class="front_page_bottom_row">
+        <div class="col-lg-4">
+       
+         
+          <!-- <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p> -->
+        </div>
+        <div class="col-lg-4">
+    
+      <a class="btn btn-primary" href="/users/new" role="button">Sign Up &raquo;</a></p>
+       </div>
+        <div class="col-lg-4">
+    
+          
+          <!-- <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+        </div> -->
+      </div>
+</div>
+
+
+  <div id= "bottom_info" class="jumbotron" >
+    <div class = "login">
+      <p><a href="/logout">Logout</a></p>
+
+      <div ><%= current_user.name unless current_user.nil? %></div>
+        <form method = "post" action ="/login">
+
+            <label>Email</label>
+            <input type = "text" name = "email">      
+            <label>Password</label>
+            <input type="password" name = "password">
+            <button class="btn btn-primary" type="submit" id="submit">Login</button>        
+
+        </form>
+
+    </div>
+  </div>
+
+
+
+  
