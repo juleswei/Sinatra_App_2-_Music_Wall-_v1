@@ -12,8 +12,6 @@ gem 'puma'
 gem 'tux'
 
 group :production do
-  gem 'pry'
-  gem 'shotgun'
   gem 'pg'
 end
 
