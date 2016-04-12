@@ -32,8 +32,10 @@
               <ul class="dropdown-menu">
                 <li><a href="/songs">See All</a></li>
               </ul>
-              <li ><a href="/users/new">Sign Up</a></li>
-
+              <li >
+                <% unless current_user%>
+                  <a href="/users/new">Sign Up</a></li>
+                <% end %>
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
