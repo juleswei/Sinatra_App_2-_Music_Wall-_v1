@@ -37,6 +37,22 @@
                   <a href="/users/new">Sign Up</a></li>
                 <% end %>
             </li>
+            <li>
+              <% if current_user%>
+                <p><a href="/logout">Logout</a></p>
+              <% end %>
+            </li>
+            <li>
+                <div ><%= current_user.name unless current_user.nil? %></div>
+                  <form method = "post" action ="/login">
+                    <label>Email</label>
+                    <input type = "text" name = "email">      
+                    <label>Password</label>
+                    <input type="password" name = "password">
+                    <button class="btn btn-primary" type="submit" id="submit">Login</button>        
+                  </form>
+                </div>
+            </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="/"><%= current_user.name unless current_user.nil? %></a></li>
