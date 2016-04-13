@@ -1,43 +1,31 @@
-<!-- <div class="container">
-  <div class="jumbotron">
-    <h1>Sign Up Page</h1>
-    <p>Input your user info today</p>
+<div class="sign_in_box">
 
-      <form method = "post" action ="/users">
-        <div>
-          <label>Name</label>
-          <input type = "text" name = "name">
-        </div>
-        <div>
-          <label>Email</label>
-          <input type = "text" name = "email">
-        </div>
-        <div>
-          <label>Password</label>
-          <input type="text" name = "password">
-        </div>
-        <div>
-          <input type="submit" name="Create New User">
-        </div>
-      </form>
-  </div>
-</div> -->
+  <form class="form-signin" method = "post" action ="/users">
+    <h2 class="form-signin-heading">Please sign in</h2>
 
- <div class="sign_in_box">
+    <label for="inputEmail" class="sr-only">Name</label>
+    <input type="text" name = "name" id="inputEmail" class="form-control" placeholder="Name" required>
 
-      <form class="form-signin" method = "post" action ="/users">
-        <h2 class="form-signin-heading">Please sign in</h2>
+    <label for="inputEmail" class="sr-only">Email address</label>
+    <input type="email" name = "email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+    
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" name = "password" id="inputPassword" class="form-control" placeholder="Password" required>
 
-        <label for="inputEmail" class="sr-only">Name</label>
-        <input type="text" name = "name" id="inputEmail" class="form-control" placeholder="Name" required>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+  </form>
 
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" name = "email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" name = "password" id="inputPassword" class="form-control" placeholder="Password" required>
+</div>
 
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      </form>
-
-    </div>
+            <li>
+                <%= current_user.name if current_user%>
+                <% unless current_user %>
+                    <form method = "post" action ="/login">
+                      <label>Email</label>
+                      <input type = "text" name = "email">      
+                      <label>Password</label>
+                      <input type="password" name = "password">
+                      <button class="btn btn-primary" type="submit" id="submit">Login</button>      
+                    </form>
+                  <% end %>
+            </li>

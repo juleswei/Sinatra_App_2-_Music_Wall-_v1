@@ -26,15 +26,14 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="/">Home</a></li>
-            <li ><a href="/songs/new">Post a Song</a></li>
-            <li class="dropdown">
-              <a href="/songs" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">All Songs <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="/songs">See All</a></li>
-              </ul>
-              <li >
+            <li ><a href="/songs">All Songs</a></li>
+            <li ><a href="/songs/new">Add Song</a></li>
+          </ul>
+
+          <div class="nav navbar-nav navbar-right edited">
+            <li >
                 <% unless current_user%>
-                  <a href="/users/new">Sign Up</a></li>
+                  <a href="/users/new">Sign Up</a>
                 <% end %>
             </li>
             <li>
@@ -42,21 +41,15 @@
                 <p><a href="/logout">Logout</a></p>
               <% end %>
             </li>
+            
             <li>
-                <div ><%= current_user.name unless current_user.nil? %></div>
-                  <form method = "post" action ="/login">
-                    <label>Email</label>
-                    <input type = "text" name = "email">      
-                    <label>Password</label>
-                    <input type="password" name = "password">
-                    <button class="btn btn-primary" type="submit" id="submit">Login</button>        
-                  </form>
-                </div>
+                <%= current_user.name if current_user%>
+                <% unless current_user %>
+                  <a href="/users/new">Login</a>
+                <% end %>
             </li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="/"><%= current_user.name unless current_user.nil? %></a></li>
-          </ul>
+          </div>
+
         </div>
       </div>
     </nav>
