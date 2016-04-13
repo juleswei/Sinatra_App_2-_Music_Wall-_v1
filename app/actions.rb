@@ -84,6 +84,9 @@ post '/users' do
     erb :'users/new'
   end
 end
+get '/users/login' do
+  erb :'/users/login'
+end
 
 post '/login' do
   user = User.find_by(email: params[:email])

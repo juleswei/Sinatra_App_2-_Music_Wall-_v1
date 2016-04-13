@@ -26,7 +26,7 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="/"><span class="text-thin">Home</span></a></li>
-            <li ><a href="/songs"><span class="text-thin">All Songs</span></a></li>
+           <!--  <li ><a href="/songs"><span class="text-thin">All Songs</span></a></li> -->
 <!--             <li ><a href="/songs/new"><span class="text-thin">Add Song</span></a></li> -->
           </ul>
 
@@ -45,7 +45,7 @@
             <li>
                 <%= current_user.name if current_user%>
                 <% unless current_user %>
-                  <a href="/users/new"><span class="text-thin">Login</span></a>
+                  <a href="/users/login"><span class="text-thin">Login</span></a>
                 <% end %>
             </li>
           </div>
